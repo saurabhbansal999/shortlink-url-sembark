@@ -10,7 +10,6 @@ use Inertia\Inertia;
 
 Route::get('/', fn () => Inertia::render('Welcome', [
     'canLogin' => Route::has('login'),
-    'canRegister' => Route::has('register'),
 ]))->name('welcome');
 
 Route::middleware(['auth', 'verified'])->get('/dashboard', fn () => Inertia::render('Dashboard'))->name('dashboard');
